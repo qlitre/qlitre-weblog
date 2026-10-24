@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { PostList } from '../types/blog';
-import { BLOG_PER_PAGE } from '../settings/siteSettings';
+import { PostList } from '../types/blog'
+import { BLOG_PER_PAGE } from '../settings/siteSettings'
 import { MicroCMSQueries } from 'microcms-js-sdk'
 
 const limit = BLOG_PER_PAGE
@@ -12,7 +12,7 @@ const params: MicroCMSQueries = {
   limit: limit,
   offset: (page - 1) * limit,
   orders: '-publishedAt',
-  fields: 'id,title,description,tag,publishedAt,revisedAt'
+  fields: 'id,title,description,tag,publishedAt,revisedAt',
 }
 
 const { data: posts } = await useFetch('/api/postList', { params: params })
@@ -20,8 +20,10 @@ const { data: posts } = await useFetch('/api/postList', { params: params })
 const numPages = Math.ceil(posts.value.totalCount / limit)
 
 // queryが変化した場合にページをリロードする
-watch(() => route.query, () => location.reload())
-
+watch(
+  () => route.query,
+  () => location.reload()
+)
 </script>
 
 <template>
@@ -51,7 +53,6 @@ watch(() => route.query, () => location.reload())
   margin-bottom: 30px;
 }
 
-
 @media (max-width: 1024px) {
   .wrapper {
     max-width: 600px;
@@ -70,7 +71,7 @@ watch(() => route.query, () => location.reload())
   margin-bottom: 2rem;
 }
 
-input[type=text] {
+input[type='text'] {
   border: 1px solid #ccc;
   width: 100%;
   box-sizing: border-box;
@@ -82,7 +83,7 @@ input[type=text] {
   transition: box-shadow 0.2s ease;
 }
 
-input[type=text]:focus {
+input[type='text']:focus {
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }

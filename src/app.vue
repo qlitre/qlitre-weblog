@@ -1,7 +1,5 @@
 <script setup lang="ts">
-
-const layout = "default";
-
+const layout = 'default'
 </script>
 
 <template>
