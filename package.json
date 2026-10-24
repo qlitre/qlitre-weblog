@@ -6,12 +6,21 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
+    "@nuxt/eslint": "^1.17.0",
     "@types/node": "^24",
     "@types/prismjs": "^1.26.6",
-    "nuxt": "^4.6.2"
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "nuxt": "^4.6.2",
+    "prettier": "^3.9.10",
+    "typescript": "^6"
   },
   "dependencies": {
     "@nuxtjs/google-adsense": "^3.0.3",

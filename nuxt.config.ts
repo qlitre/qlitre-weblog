@@ -91,7 +91,7 @@ export default defineNuxtConfig({
     layoutTransition: { name: "layout", mode: "default" },
     pageTransition: { name: "page", mode: "default" },
   },
-  modules: ["@nuxtjs/google-adsense"],
+  modules: ["@nuxtjs/google-adsense", "@nuxt/eslint"],
   googleAdsense: {
     id: GA_ADSENSE_ID,
     pageLevelAds: true,
