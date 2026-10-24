@@ -1,5 +1,6 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -8,21 +9,20 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@types/node": "^18.15.8",
-    "@types/prismjs": "^1.26.0",
+    "@types/node": "^24",
+    "@types/prismjs": "^1.26.6",
     "nuxt": "^4.6.2"
   },
   "dependencies": {
-    "@nuxtjs/google-adsense": "2.1.0",
-    "add": "^2.0.6",
-    "cheerio": "^1.0.0-rc.12",
-    "dayjs": "^1.11.6",
-    "microcms-js-sdk": "^2.7.0",
-    "postcss": "^8.4.19",
-    "prismjs": "^1.29.0",
-    "sass": "^1.56.1",
-    "sass-loader": "^13.2.0",
-    "vite-plugin-prismjs": "^0.0.8",
+    "@nuxtjs/google-adsense": "^3.0.3",
+    "add": "^2.0.9",
+    "cheerio": "^1.2.0",
+    "dayjs": "^1.11.23",
+    "microcms-js-sdk": "^3.6.0",
+    "postcss": "^8.5.31",
+    "prismjs": "^1.30.0",
+    "sass": "^1.106.1",
+    "vite-plugin-prismjs": "^0.0.11",
     "yarn": "^1.22.19"
   }
 }
