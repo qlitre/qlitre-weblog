@@ -16,36 +16,15 @@ function getPath(tagId: string) {
 </script>
 
 <template>
-  <NuxtLink :class="`tag-badge ${colorClass}`" :to="getPath(tag.id)">
+  <NuxtLink
+    class="mr-4 inline-block cursor-pointer rounded-sm px-2 py-1 text-center text-xs tracking-[1.5px] hover:opacity-60"
+    :class="
+      colorClass == 'active'
+        ? 'bg-gray-500 text-white'
+        : 'border border-gray-500 bg-white text-gray-700'
+    "
+    :to="getPath(tag.id)"
+  >
     {{ tag.name }}<span v-if="count">({{ count }})</span>
   </NuxtLink>
 </template>
-
-<style scoped lang="scss">
-.tag-badge {
-  display: inline-block;
-  border-radius: 4px;
-  text-align: center;
-  border: 1px solid var(--c-gray-500);
-  padding: 4px 8px;
-  cursor: pointer;
-  font-size: var(--font-size-xs);
-  margin-right: 1rem;
-  letter-spacing: 1.5px;
-
-  &:hover {
-    opacity: 0.6;
-  }
-}
-
-.active {
-  color: var(--c-white);
-  background-color: var(--c-gray-500);
-  border: none;
-}
-
-.nonActive {
-  color: var(--c-gray-700);
-  background-color: var(--c-white);
-}
-</style>

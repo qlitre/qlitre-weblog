@@ -24,27 +24,13 @@ function submit() {
 </script>
 
 <template>
-  <form class="search-form" @submit.prevent="submit">
-    <input ref="searchForm" v-model="query" type="text" placeholder="Keyword" />
+  <form @submit.prevent="submit">
+    <input
+      ref="searchForm"
+      v-model="query"
+      class="inline-block h-7 w-60 rounded-[10px] border border-[#ccc] bg-white px-2 py-1 font-['Ubuntu','Noto_Sans_JP',sans-serif] text-base text-black focus:shadow-[0_0_0_0.25rem_rgba(13,110,253,0.25)] focus:outline-0"
+      type="text"
+      placeholder="Keyword"
+    />
   </form>
 </template>
-
-<style scoped lang="scss">
-input[type='text'] {
-  font-size: var(--font-size-base);
-  padding: 4px 8px;
-  box-sizing: border-box;
-  border-radius: 10px;
-  border: solid 1px #ccc;
-  background-color: #fff;
-  font-family: 'Ubuntu', 'Noto Sans JP', sans-serif;
-  display: inline-block;
-  width: 240px;
-  height: 28px;
-}
-
-input[type='text']:focus {
-  outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-}
-</style>

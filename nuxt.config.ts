@@ -1,3 +1,4 @@
+import tailwindcss from '@tailwindcss/vite'
 import prismjsModule from 'vite-plugin-prismjs'
 import { createMicroCMSClient } from './src/server/utils/microcms'
 const { API_KEY, SERVICE_DOMAIN, GA_ADSENSE_ID, HOST_URL } = process.env
@@ -16,7 +17,7 @@ export default defineNuxtConfig({
     serviceDomain: SERVICE_DOMAIN,
     siteUrl: HOST_URL,
   },
-  css: ['~/assets/scss/reset.scss', '~/assets/scss/common.scss'],
+  css: ['~/assets/css/main.css'],
   hooks: {
     async 'nitro:config'(nitroConfig) {
       if (nitroConfig.dev) {
@@ -99,6 +100,7 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [
+      tailwindcss(),
       {
         // @nuxtjs/google-adsense 3.0.3 の CSS に `important!` の typo があり、
         // 本番ビルドの CSS minify (lightningcss) が失敗するため修正する

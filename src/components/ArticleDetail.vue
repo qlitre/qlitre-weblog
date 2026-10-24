@@ -40,23 +40,25 @@ useDetailHead(article.value)
 
 <template>
   <div>
-    <div class="article-header">
+    <div class="mb-8 pb-[30px]">
       <TagLabel
         v-for="tag in article.tag"
         :key="tag.id"
         :tag="tag"
         :color-class="`nonActive`"
       ></TagLabel>
-      <h1 class="title">
+      <h1 class="mt-2 text-xl leading-[1.6] font-bold text-black">
         {{ article.title }}
       </h1>
-      <p class="date">
-        <span class="published"> 公開日：{{ $formatDate(article.publishedAt) }} </span>
-        <span class="revised"> 更新日：{{ $formatDate(article.revisedAt) }} </span>
+      <p class="mt-8 text-base text-gray-700">
+        <span> 公開日：{{ $formatDate(article.publishedAt) }} </span>
+        <span class="ml-2"> 更新日：{{ $formatDate(article.revisedAt) }} </span>
       </p>
     </div>
-    <div class="post-wrapper">
-      <div class="posts">
+    <div
+      class="flex flex-col-reverse gap-[30px] pb-8 lg:grid lg:grid-cols-[600px_300px] lg:grid-rows-1"
+    >
+      <div>
         <div v-if="article.useRepeatBody">
           <RepeatedBody :repeated-body="article.repeated" />
         </div>
@@ -64,7 +66,7 @@ useDetailHead(article.value)
           <MarkdownBody :body="article.text" />
         </div>
       </div>
-      <div class="aside">
+      <div>
         <Toc :toc="toc" />
       </div>
     </div>
@@ -72,50 +74,3 @@ useDetailHead(article.value)
     <TopToLink />
   </div>
 </template>
-
-<style scoped lang="scss">
-.article-header {
-  padding-bottom: 30px;
-  margin-bottom: var(--spacing-8);
-}
-
-.post-wrapper {
-  padding-bottom: var(--spacing-8);
-}
-
-@media (max-width: 1024px) {
-  .post-wrapper {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 30px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .post-wrapper {
-    display: grid;
-    grid-template-columns: 600px 300px;
-    -moz-column-gap: 30px;
-    column-gap: 30px;
-    grid-template-rows: 1fr;
-  }
-}
-
-.date {
-  margin-top: var(--spacing-8);
-  font-size: var(--font-size-base);
-  color: var(--c-gray-700);
-}
-
-.revised {
-  margin-left: var(--spacing-2);
-}
-
-.title {
-  margin-top: var(--spacing-2);
-  font-size: var(--font-size-xl);
-  color: var(--c-black);
-  line-height: 1.6;
-  font-weight: bold;
-}
-</style>

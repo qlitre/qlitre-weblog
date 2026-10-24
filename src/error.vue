@@ -4,23 +4,9 @@ const error = useError()
 
 <template>
   <TheHeader />
-  <div class="wrapper">
-    <h1>{{ error.message }}</h1>
+  <div class="relative mx-auto w-[960px] pt-28">
+    <h1 class="mb-[30px] text-center text-[2.4rem] font-bold">{{ error.message }}</h1>
     <TopToLink />
   </div>
   <TheFooter />
 </template>
-<style scoped lang="scss">
-.wrapper {
-  padding-top: 112px;
-  position: relative;
-  width: 960px;
-  margin: 0 auto 0;
-}
-
-h1 {
-  text-align: center;
-  font-size: 2.4rem;
-  margin-bottom: 30px;
-}
-</style>
