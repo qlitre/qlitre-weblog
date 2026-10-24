@@ -1,3 +1,5 @@
 [build]
   command = "yarn generate"
   publish = "dist"
+  # サイトに関係するファイルが変わっていなければビルドを飛ばす。ビルドフック経由は常にビルドする
+  ignore = '[ -z "$INCOMING_HOOK_TITLE" ] && git diff --quiet "$CACHED_COMMIT_REF" "$COMMIT_REF" -- src nuxt.config.ts package.json yarn.lock netlify.toml'
