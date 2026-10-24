@@ -10,10 +10,10 @@
   "devDependencies": {
     "@types/node": "^18.15.8",
     "@types/prismjs": "^1.26.0",
-    "nuxt": "^3.13.2"
+    "nuxt": "^4.6.2"
   },
   "dependencies": {
-    "@nuxtjs/google-adsense": "^2.1.0",
+    "@nuxtjs/google-adsense": "2.1.0",
     "add": "^2.0.6",
     "cheerio": "^1.0.0-rc.12",
     "dayjs": "^1.11.6",

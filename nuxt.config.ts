@@ -1,9 +1,14 @@
 const { API_KEY, SERVICE_DOMAIN, GA_ADSENSE_ID } = process.env;
-import prismjs from 'vite-plugin-prismjs'
+import prismjsModule from 'vite-plugin-prismjs'
 import { createClient } from 'microcms-js-sdk'; //ES6
+
+// CJSパッケージのため default が二重になる場合がある
+const prismjs = (prismjsModule as any).default ?? prismjsModule
 
 export default defineNuxtConfig({
     srcDir: 'src/',
+    serverDir: 'src/server',
+    dir: { public: 'src/public' },
     ssr: true,
     runtimeConfig: {
         apiKey: API_KEY,
@@ -17,6 +22,9 @@ export default defineNuxtConfig({
             }
             nitroConfig.prerender.ignore = ['/draft', '/search']
             nitroConfig.prerender.crawlLinks = false
+            // microCMS のレート制限(429)を避けるため、リクエスト間隔を空ける
+            nitroConfig.prerender.concurrency = 1
+            nitroConfig.prerender.interval = 500
 
             const limit = 10
             const client = createClient({
