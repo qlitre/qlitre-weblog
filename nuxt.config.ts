@@ -3,7 +3,8 @@ import { createMicroCMSClient } from './src/server/utils/microcms'
 const { API_KEY, SERVICE_DOMAIN, GA_ADSENSE_ID, HOST_URL } = process.env
 
 // CJSパッケージのため default が二重になる場合がある
-const prismjs = (prismjsModule as any).default ?? prismjsModule
+const prismjs =
+  (prismjsModule as unknown as { default?: typeof prismjsModule }).default ?? prismjsModule
 
 export default defineNuxtConfig({
   srcDir: 'src/',

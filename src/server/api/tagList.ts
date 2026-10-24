@@ -1,7 +1,7 @@
 import client from './client'
 import type { Tag } from '../../types/blog'
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async () => {
   const queries = {
     limit: 100,
   }

@@ -24,7 +24,7 @@ if (!article.value) {
 let body = ''
 if (article.value.useRepeatBody) {
   const arr = article.value.repeated
-  arr.forEach((elm, index) => {
+  arr.forEach((elm) => {
     if (elm.fieldId == 'richEditor') {
       body += elm.body
     }

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { PostList } from '../types/blog'
 import { BLOG_PER_PAGE } from '../settings/siteSettings'
 import type { MicroCMSQueries } from 'microcms-js-sdk'
 

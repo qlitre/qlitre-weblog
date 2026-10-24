@@ -10,6 +10,8 @@ const { body } = defineProps<Props>()
 onMounted(() => Prism.highlightAll())
 </script>
 <template>
+  <!-- 自分の microCMS から取得した HTML なので v-html で描画する -->
+  <!-- eslint-disable-next-line vue/no-v-html -->
   <div class="md" v-html="body"></div>
 </template>
 
