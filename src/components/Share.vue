@@ -11,38 +11,13 @@ const twitterLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
 </script>
 
 <template>
-  <a class="shareXbtn" :href="twitterLink" target="_blank" rel="noopener noreferrer">
-    <img class="xImage" src="../assets/images/xlogo.svg" alt="Twitter" />
+  <a
+    class="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-black/92 px-4 text-sm text-white transition-colors duration-300 hover:bg-black/64"
+    :href="twitterLink"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img class="size-5" src="../assets/images/xlogo.svg" alt="Twitter" />
     Share
   </a>
 </template>
-
-<style scoped lang="scss">
-.shareXbtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-2);
-  font-size: var(--font-size-sm);
-  border-radius: var(--radius-md);
-  color: white;
-  background-color: var(--c-blackAlpha-900);
-  padding-left: var(--spacing-4);
-  padding-right: var(--spacing-4);
-  height: var(--size-10);
-  transition: background-color 0.3s;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-2);
-
-  &:hover {
-    background-color: var(--c-blackAlpha-700);
-  }
-}
-
-.xImage {
-  width: 20px;
-  height: 20px;
-}
-</style>

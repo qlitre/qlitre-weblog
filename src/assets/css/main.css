@@ -1,0 +1,91 @@
+@import 'tailwindcss';
+
+/* static: 記事本文のスタイル(MarkdownBody.vue)からも参照するため、未使用でも変数を出力する */
+@theme static {
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+  /* 行の高さは個別に指定するため、フォントサイズには line-height を持たせない */
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3.5rem;
+
+  /* 従来のデザインで使っていた色 */
+  --color-gray-50: #f7fafc;
+  --color-gray-100: #edf2f7;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e0;
+  --color-gray-400: #a0aec0;
+  --color-gray-500: #718096;
+  --color-gray-600: #4a5568;
+  --color-gray-700: #2d3748;
+  --color-gray-800: #1a202c;
+  --color-gray-900: #171923;
+  --color-teal-400: #38b2ac;
+  --color-cyan-700: #0987a0;
+  --color-text: #474b4b;
+  --color-accent: #d03c56;
+
+  --container-content: 960px;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-white);
+    color: var(--color-text);
+    line-height: 1;
+  }
+
+  a {
+    color: var(--color-accent);
+  }
+
+  hr {
+    margin: 1em 0;
+    border-top: 1px solid #ccc;
+  }
+}
+
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gray-300) var(--color-white);
+
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--color-white);
+    border-radius: var(--radius-sm);
+    box-shadow: inset 0 0 2px #777;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-gray-300);
+    border-radius: var(--radius-sm);
+  }
+}
+
+/* ページ・レイアウト切り替え時のトランジション */
+.page-enter-active,
+.page-leave-active,
+.layout-enter-active,
+.layout-leave-active {
+  transition: all 0.4s;
+}
+
+.page-enter-from,
+.page-leave-to,
+.layout-enter-from,
+.layout-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}

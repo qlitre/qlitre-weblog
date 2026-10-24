@@ -3,19 +3,31 @@ import { config } from '../settings/siteSettings'
 </script>
 
 <template>
-  <header class="root">
-    <div class="header">
+  <header class="sticky top-0 backdrop-blur-sm">
+    <div class="mx-auto flex max-w-content items-center justify-between p-4">
       <nuxt-link :to="`/`">
-        <h1 class="site-title">
+        <h1 class="text-xl font-bold tracking-[1px] text-black">
           {{ config.siteName }}
         </h1>
       </nuxt-link>
-      <nav class="main-nav">
-        <li class="nav-item">
-          <a :href="config.social.repos" target="_blank" rel="noopener noreferrer"> GitHub </a>
+      <nav class="flex list-none items-center">
+        <li class="mr-6 text-base font-bold tracking-[1px]">
+          <a
+            class="text-black hover:opacity-60"
+            :href="config.social.repos"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
         </li>
-        <li class="nav-item">
-          <nuxt-link to="https://qlitre.me/" target="_blank" rel="noopener noreferrer">
+        <li class="mr-6 text-base font-bold tracking-[1px]">
+          <nuxt-link
+            class="text-black hover:opacity-60"
+            to="https://qlitre.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             ABOUT
           </nuxt-link>
         </li>
@@ -23,52 +35,3 @@ import { config } from '../settings/siteSettings'
     </div>
   </header>
 </template>
-
-<style scoped lang="scss">
-.root {
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(8px);
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: var(--spacing-4);
-  padding-bottom: var(--spacing-4);
-  max-width: var(--container-max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--spacing-4);
-  padding-right: var(--spacing-4);
-}
-
-.site-title {
-  font-size: var(--font-size-xl);
-  color: var(--c-black);
-  letter-spacing: 1px;
-}
-
-.main-nav {
-  list-style: none;
-  margin: 0;
-  display: flex;
-  align-items: center;
-
-  .nav-item {
-    margin-right: 1.5rem;
-    font-size: var(--font-size-base);
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-
-  a {
-    color: var(--c-black);
-
-    &:hover {
-      opacity: 0.6;
-    }
-  }
-}
-</style>

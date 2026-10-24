@@ -58,7 +58,7 @@ function getClass(tagId: string) {
 </script>
 
 <template>
-  <div class="inline">
+  <div class="mb-4 scrollbar-thin overflow-x-auto pb-2 whitespace-nowrap">
     <span v-for="tag in tagList" :key="tag.id">
       <TagLabel
         :tag="tag"
@@ -69,31 +69,3 @@ function getClass(tagId: string) {
     </span>
   </div>
 </template>
-
-<style scoped lang="scss">
-.inline {
-  margin-bottom: var(--spacing-4);
-  overflow-x: auto;
-  white-space: nowrap;
-  padding-bottom: var(--spacing-2);
-  scrollbar-width: thin;
-  scrollbar-color: var(--c-gray-300) var(--c-white);
-}
-
-.inline::-webkit-scrollbar {
-  width: 2px;
-}
-
-.inline::-webkit-scrollbar-track {
-  background: var(--c-white);
-  border: none;
-  border-radius: var(--radius-sm);
-  box-shadow: inset 0 0 2px #777;
-}
-
-.inline::-webkit-scrollbar-thumb {
-  background: var(--c-gray-300);
-  border-radius: var(--radius-sm);
-  box-shadow: none;
-}
-</style>
