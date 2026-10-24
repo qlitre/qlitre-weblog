@@ -4,7 +4,7 @@ export const config = {
     siteUrl: "https://qlitre-weblog.com",
     siteDescription: "Pythonを中心にプログラミングの備忘録、チュートリアルを書いています",
     social: {
-        repos: "https://github.com/qlitre/qlitre-weblog-nuxt3",
+        repos: "https://github.com/qlitre/qlitre-weblog",
         github: "https://github.com/qlitre",
         twitter: "@kuri_tter",
         twitterProf: "https://twitter.com/kuri_tter",
