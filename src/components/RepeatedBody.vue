@@ -11,7 +11,7 @@ const { repeatedBody } = defineProps<Props>()
   <div v-for="(section, index) in repeatedBody" :key="index">
     <div v-if="section.fieldId == 'amazonLink'">
       <AmazonLinkCard
-        :amazonLink="{ title: section.title, url: section.url, image: section.image }"
+        :amazon-link="{ title: section.title, url: section.url, image: section.image }"
       />
     </div>
     <div v-if="section.fieldId == 'richEditor'">

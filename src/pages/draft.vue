@@ -6,5 +6,5 @@ const draftKey = String(route.query.draftKey)
 </script>
 
 <template>
-  <ArticleDetail :slug="slug" :draftKey="draftKey" />
+  <ArticleDetail :slug="slug" :draft-key="draftKey" />
 </template>

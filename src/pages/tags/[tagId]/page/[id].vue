@@ -5,5 +5,5 @@ const tagId = String(route.params.tagId == undefined ? '' : route.params.tagId)
 </script>
 
 <template>
-  <Home :page="page" :tagId="tagId" />
+  <Home :page="page" :tag-id="tagId" />
 </template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PostList } from '../types/blog'
 import { BLOG_PER_PAGE } from '../settings/siteSettings'
-import { MicroCMSQueries } from 'microcms-js-sdk'
+import type { MicroCMSQueries } from 'microcms-js-sdk'
 
 const limit = BLOG_PER_PAGE
 const route = useRoute()
@@ -31,7 +31,7 @@ watch(
     <SearchForm :keyword="query" />
     <div v-if="posts.contents">
       <ArticleList :posts="posts.contents" />
-      <Pagination :numPages="numPages" :current="page" :keyword="query" />
+      <Pagination :num-pages="numPages" :current="page" :keyword="query" />
     </div>
     <div v-if="posts.contents.length == 0">
       <h1 class="no-result">お探しの記事は見つかりませんでした。</h1>

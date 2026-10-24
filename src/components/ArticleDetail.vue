@@ -45,7 +45,7 @@ useDetailHead(article.value)
         v-for="tag in article.tag"
         :key="tag.id"
         :tag="tag"
-        :colorClass="`nonActive`"
+        :color-class="`nonActive`"
       ></TagLabel>
       <h1 class="title">
         {{ article.title }}
@@ -58,7 +58,7 @@ useDetailHead(article.value)
     <div class="post-wrapper">
       <div class="posts">
         <div v-if="article.useRepeatBody">
-          <RepeatedBody :repeatedBody="article.repeated" />
+          <RepeatedBody :repeated-body="article.repeated" />
         </div>
         <div v-if="!article.useRepeatBody">
           <MarkdownBody :body="article.text" />

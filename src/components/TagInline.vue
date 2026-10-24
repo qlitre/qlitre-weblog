@@ -62,8 +62,8 @@ function getClass(tagId: string) {
     <span v-for="tag in tagList" :key="tag.id">
       <TagLabel
         :tag="tag"
-        :isInline="true"
-        :colorClass="getClass(tag.id)"
+        :is-inline="true"
+        :color-class="getClass(tag.id)"
         :count="countData[tag.id]"
       />
     </span>

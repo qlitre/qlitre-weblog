@@ -10,7 +10,7 @@ const { posts } = defineProps<Props>()
 
 <template>
   <div>
-    <article class="article" v-for="post in posts" :key="post.id">
+    <article v-for="post in posts" :key="post.id" class="article">
       <NuxtLink :to="`/${post.id}`">
         <h1 class="title">
           {{ post.title }}
@@ -25,7 +25,7 @@ const { posts } = defineProps<Props>()
         v-for="tag in post.tag"
         :key="tag.id"
         :tag="tag"
-        :colorClass="`nonActive`"
+        :color-class="`nonActive`"
         class="tag"
       ></TagLabel>
     </article>

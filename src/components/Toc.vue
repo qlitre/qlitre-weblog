@@ -12,7 +12,7 @@ const { toc } = defineProps<Props>()
 
 <template>
   <ul class="toc">
-    <li :class="`list ${item.name}`" v-for="item in toc" :key="item.id">
+    <li v-for="item in toc" :key="item.id" :class="`list ${item.name}`">
       <a :href="`#${item.id}`">
         {{ item.text }}
       </a>

@@ -1,5 +1,4 @@
-import type { MicroCMSListContent, MicroCMSListResponse } from 'microcms-js-sdk'
-import type { MicroCMSImage } from 'microcms-js-sdk'
+import type { MicroCMSListContent, MicroCMSListResponse, MicroCMSImage } from 'microcms-js-sdk'
 
 export type Tag = {
   name: string

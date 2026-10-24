@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { BLOG_PER_PAGE } from '../settings/siteSettings'
+import { BLOG_PER_PAGE, config } from '../settings/siteSettings'
 import type { MicroCMSQueries } from 'microcms-js-sdk'
-import { config } from '../settings/siteSettings'
 
 type Props = {
   page: number
@@ -30,17 +29,17 @@ useIndexHead()
 <template>
   <div>
     <div class="mb-2">
-      <TagInline :selectedTagId="tagId" />
+      <TagInline :selected-tag-id="tagId" />
     </div>
     <div class="post-wrapper">
       <div class="posts">
         <ArticleList :posts="posts.contents" />
       </div>
       <div class="aside">
-        <adsbygoogle adSlot="3796995428" />
+        <adsbygoogle ad-slot="3796995428" />
       </div>
     </div>
-    <Pagination :numPages="numPages" :current="page" :tagId="tagId" />
+    <Pagination :num-pages="numPages" :current="page" :tag-id="tagId" />
   </div>
 </template>
 

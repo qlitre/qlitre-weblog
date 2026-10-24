@@ -1,5 +1,5 @@
 import client from './client'
-import { Tag } from '../../types/blog'
+import type { Tag } from '../../types/blog'
 
 export default defineEventHandler(async (event) => {
   const queries = {
