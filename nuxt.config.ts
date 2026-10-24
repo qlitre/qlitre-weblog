@@ -1,4 +1,4 @@
-const { API_KEY, SERVICE_DOMAIN, GA_ADSENSE_ID } = process.env;
+const { API_KEY, SERVICE_DOMAIN, GA_ADSENSE_ID, HOST_URL } = process.env;
 import prismjsModule from "vite-plugin-prismjs";
 import { createClient } from "microcms-js-sdk"; //ES6
 
@@ -13,6 +13,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     apiKey: API_KEY,
     serviceDomain: SERVICE_DOMAIN,
+    siteUrl: HOST_URL,
   },
   css: ["~/assets/scss/reset.scss", "~/assets/scss/common.scss"],
   hooks: {
@@ -87,6 +88,7 @@ export default defineNuxtConfig({
         }
       }
       nitroConfig.prerender.routes.push("/");
+      nitroConfig.prerender.routes.push("/sitemap.xml");
     },
   },
   app: {
