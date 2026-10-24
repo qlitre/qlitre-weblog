@@ -1,3 +1,3 @@
 <template>
-    <Home :page="1" />
+  <Home :page="1" />
 </template>

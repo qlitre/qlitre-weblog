@@ -1,16 +1,16 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "type": "node",
-        "request": "launch",
-        "name": "Nuxt.js",
-        "program": "${workspaceFolder}/node_modules/nuxt/bin/nuxt.js",
-        "args": ["dev"],
-        "cwd": "${workspaceFolder}",
-        "console": "integratedTerminal",
-        "runtimeArgs": ["--nolazy"],
-        "sourceMaps": true
-      }
-    ]
-  }
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Nuxt.js",
+      "program": "${workspaceFolder}/node_modules/nuxt/bin/nuxt.js",
+      "args": ["dev"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "runtimeArgs": ["--nolazy"],
+      "sourceMaps": true
+    }
+  ]
+}

@@ -1,11 +1,8 @@
 <template>
   <div class="center">
-    <NuxtLink class="top-to-link" :to="`/`">
-      記事一覧へ
-    </NuxtLink>
+    <NuxtLink class="top-to-link" :to="`/`"> 記事一覧へ </NuxtLink>
   </div>
 </template>
-
 
 <style scoped lang="scss">
 .center {

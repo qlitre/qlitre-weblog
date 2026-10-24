@@ -1,15 +1,13 @@
 <script setup lang="ts">
-
 import { config } from '../settings/siteSettings'
 
 type Props = {
-  id: string;
-  title: string;
+  id: string
+  title: string
 }
 const { id, title } = defineProps<Props>()
 
-const twitterLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${config.siteUrl}/${id}/&hashtags=qlitreweblog&via=kuri_tter`;
-
+const twitterLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${config.siteUrl}/${id}/&hashtags=qlitreweblog&via=kuri_tter`
 </script>
 
 <template>
@@ -18,8 +16,6 @@ const twitterLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     Share
   </a>
 </template>
-
-
 
 <style scoped lang="scss">
 .shareXbtn {
